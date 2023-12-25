@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="CarRental.Objects.CarOrderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="60" d:DesignWidth="600" VerticalAlignment="Top">
+
+    <Grid Background="#2D2D30" Margin="0,5,0,0">
+        <Grid.Effect>
+            <DropShadowEffect
+                Opacity="0.35"
+                BlurRadius="7"
+                ShadowDepth="2"
+                Direction="270"/>
+        </Grid.Effect>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="29*" />
+            <ColumnDefinition Width="135"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="img" Grid.Column="0"/>
+
+        <TextBlock Name="NameCar" Text="НАЗВАНИЕ МАШИНЫ" FontFamily="Century Gothic" FontSize="15" Foreground="White" Grid.Column="1" Margin="10,18"/>
+
+        <Border x:Name="BorderOrder" Grid.Column="2" BorderBrush="Green" BorderThickness="1" Margin="10">
+            <TextBlock Name="Order" Text="АКТИВЕН" FontFamily="Century Gothic" FontSize="20" Foreground="Green" TextAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+
+        <Button Name="ButtonInform" Height="35" Width="35" Margin="0,0,0,0" Style="{StaticResource OrangeButton}">
+            <Image Source="pack://application:,,,/Resourses/Icon/Warning_sign.png" Height="25" Width="25"/>
+        </Button>
+    </Grid>
+</UserControl>

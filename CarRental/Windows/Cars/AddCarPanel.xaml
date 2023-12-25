@@ -1,0 +1,136 @@
+﻿<UserControl x:Class="CarRental.Windows.Cars.AddCarPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="635" d:DesignWidth="791">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Background="{StaticResource TabControlBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <TextBlock Text="Название машины:" Foreground="White" FontSize="20" Margin="10,6,310,6" VerticalAlignment="Center"/>
+            <TextBox x:Name="TextBoxNameCar" Text="Kia Rio X-Line" BorderThickness="0,0,0,2" Background="#FF6F6F72" Height="28" Foreground="White" FontSize="20" Margin="225,6,10,6" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="130"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Separator Background="{StaticResource ButtonOrangeBrush}" Height="3" Margin="-140,-10,0,137"/>
+            </Grid>
+
+            <Grid Grid.Row="0" Margin="5,5,5,10">
+                <Image Name="ImageCar" Height="110" Width="130"/>
+                <Button x:Name="ButtonDelete" Style="{StaticResource OrangeButtonDelete}" Margin="0,0,65,0" Visibility="Collapsed"/>
+                <Button x:Name="ButtonEdit" Style="{StaticResource OrangeButtonEdit}" Margin="65,0,0,0" Visibility="Collapsed"/>
+                <Button x:Name="ButtonAddImage" Style="{StaticResource OrangeButtonAddImage}" Visibility="Visible"/>
+            </Grid>
+
+            <!--Описание машины-->
+            <Grid Grid.Column="1" Margin="0,0,0,15">
+                <Separator Background="{StaticResource ButtonOrangeBrush}" Height="3" Margin="10,0,0,107"/>
+                <StackPanel Orientation="Horizontal" Margin="10,10,0,85">
+                    <TextBlock Text="МАРКА МАШИНЫ: " FontSize="15" Foreground="White" VerticalAlignment="Center" Width="145" Margin="0,0,0,0"/>
+                    <!--<ComboBox x:Name="TextBoxBrandCar" FontSize="10" Width="208" Margin="10,0,0,0">
+                        <TextBlock Text="KIA"/>
+                        <TextBlock Text="AUDI"/>
+                        <TextBlock Text="LEXUS"/>
+                    </ComboBox>-->
+                    <TextBox x:Name="TextBoxBrandCar" TextAlignment="Center" Text="KIA" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Height="20" Width="208" Margin="10,0,0,0" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,35,0,60">
+                    <TextBlock Text="ГОД ВЫПУСКА: " FontSize="15" Foreground="White" VerticalAlignment="Center" Width="145" Margin="0,0,0,0"/>
+                    <TextBox x:Name="TextBoxYearOfIssue" TextAlignment="Center" Text="2019" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Height="20" Width="208" Margin="10,0,0,0" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,60,0,35">
+                    <TextBlock Text="ДВИГАТЕЛЬ: " FontSize="15" Foreground="White" VerticalAlignment="Center" Width="145" Margin="0,0,0,0"/>
+                    <TextBox x:Name="TextBoxEngine" TextAlignment="Center" Text="1.6" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Height="20" Width="208" Margin="10,0,0,0" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,85,0,10">
+                    <TextBlock Text="КОРОБКА ПЕРЕДАЧ: " FontSize="15" Foreground="White" VerticalAlignment="Center" Width="145" Margin="0,0,0,0"/>
+                    <ComboBox x:Name="TextBoxGearbox" FontSize="10" Width="208" Margin="10,0,0,0">
+                        <TextBlock Text="Автомат"/>
+                        <TextBlock Text="Механика"/>
+                        <TextBlock Text="Робот"/>
+                    </ComboBox>
+                    <!--<TextBox x:Name="TextBoxGearbox" TextAlignment="Center" Text="Автомат" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Height="20" Width="208" Margin="10,0,0,0" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>-->
+                </StackPanel>
+                <Separator Background="{StaticResource ButtonOrangeBrush}" Height="3" Margin="10,112,0,0"/>
+            </Grid>
+
+            <!--Технические характеристики-->
+            <Grid Grid.ColumnSpan="2" Margin="0,120,0,0" Grid.RowSpan="2">
+                <Separator Background="{StaticResource ButtonOrangeBrush}" Height="3" Margin="0,0,0,235"/>
+                <StackPanel Margin="0,5,0,210" VerticalAlignment="Center">
+                    <TextBlock Text="ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ" FontSize="20" Foreground="White" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,38,0,187">
+                    <TextBlock Text="ТИП ДВИГАТЕЛЯ" FontSize="15" Foreground="White" Width="300"/>
+                    <ComboBox x:Name="TextBoxEngineType" FontSize="10" Width="208">
+                        <TextBlock Text="Бензиновый"/>
+                        <TextBlock Text="Дизельный"/>
+                        <TextBlock Text="Газовый"/>
+                    </ComboBox>
+                    <!--<TextBox x:Name="TextBoxEngineType" TextAlignment="Center" Text="Бензиновый" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Height="20" Width="208" Margin="0,0,0,0" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>-->
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,63,0,162">
+                    <TextBlock Text="ОБЪЕМ ДВИГАТЕЛЯ" FontSize="15" Foreground="White" Width="300"/>
+                    <TextBox x:Name="TextBoxEngineVolume" TextAlignment="Center" Text="1591" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Height="20" Width="208" Margin="0,0,0,0" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,88,0,137">
+                    <TextBlock Text="МОЩНОСТЬ" FontSize="15" Foreground="White" Width="300"/>
+                    <TextBox x:Name="TextBoxPower" TextAlignment="Center" Text="123" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Height="20" Width="208" Margin="0,0,0,0" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,113,0,112">
+                    <TextBlock Text="РАЗГОН ДО 100 КМ/ЧАС" FontSize="15" Foreground="White" Width="300"/>
+                    <TextBox x:Name="TextBoxAcceleration" TextAlignment="Center" Text="11.6" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Height="20" Width="208" Margin="0,0,0,0" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,138,0,87">
+                    <TextBlock Text="ОБЪЕМ ТОПЛИВНОГО БАКА" FontSize="15" Foreground="White" Width="300"/>
+                    <TextBox x:Name="TextBoxVolumeTank" TextAlignment="Center" Text="50" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Height="20" Width="208" Margin="0,0,0,0" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,163,0,62">
+                    <TextBlock Text="МАКСИМАЛЬНАЯ СКОРОСТЬ" FontSize="15" Foreground="White" Width="300"/>
+                    <TextBox x:Name="TextBoxMaxSpeed" TextAlignment="Center" Text="183" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Height="20" Width="208" Margin="0,0,0,0" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,188,0,37">
+                    <TextBlock Text="ТРАНСМИССИЯ" FontSize="15" Foreground="White" Width="300"/>
+                    <TextBox x:Name="TextBoxTransmission" TextAlignment="Center" Text="6-ступенчатый автомат" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Height="20" Width="208" Margin="0,0,0,0" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,213,0,12">
+                    <TextBlock Text="ПРИВОД" FontSize="15" Foreground="White" Width="300"/>
+                    <ComboBox x:Name="TextBoxDriveUnit" FontSize="10" Width="208">
+                        <TextBlock Text="Передний"/>
+                        <TextBlock Text="Задний"/>
+                        <TextBlock Text="Полный"/>
+                    </ComboBox>
+                    <!--<TextBox x:Name="TextBoxDriveUnit" TextAlignment="Center" Text="Передний" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Height="20" Width="208" Margin="0,0,0,0" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>-->
+                </StackPanel>
+                <Separator Background="{StaticResource ButtonOrangeBrush}" Height="3" Margin="0,250,0,-8"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal" Margin="10,10,350,10">
+                <TextBlock Text="Стоимость: " Name="PriceText" FontSize="15" Foreground="{StaticResource ButtonOrangeBrush}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBox x:Name="TextBoxPrice" Text="10311" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Margin="5,0,0,0" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}" Width="65"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,10,5" HorizontalAlignment="Right">
+                <Button x:Name="ButtonCancel" VerticalAlignment="Center" Content="ОТМЕНА" Width="120" Margin="0,0,10,0" Style="{StaticResource RedButton}"/>
+                <Button x:Name="ButtonAccept" VerticalAlignment="Center" Content="ПРИНЯТЬ" Width="120" Style="{StaticResource OrangeButton}" Height="30"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

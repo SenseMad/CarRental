@@ -1,0 +1,140 @@
+﻿<Window x:Class="CarRental.Windows.Cars.SearchOrderCarWindows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="SearchCarWindows" Height="450" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" WindowStyle="None">
+    <Grid Name="Grid" Background="{StaticResource TabControlBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <TextBlock Text="ДОГОВОР АРЕНДЫ" FontSize="20" Foreground="White" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <Button x:Name="ButtonClose" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="40" Style="{StaticResource ButtonClose}"/>
+        </Grid>
+        
+        <!--Клиент-->
+        <Grid Grid.Row="1" Margin="10,0,10,0">
+            <StackPanel Margin="0,0,0,65" VerticalAlignment="Center" Height="25">
+                <TextBlock Text="КЛИЕНТ" FontSize="20" Foreground="White" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Margin="0,30,0,35" Orientation="Horizontal">
+                <TextBlock Text="ФИО:" Foreground="White" FontSize="15" Width="75" VerticalAlignment="Center"/>
+                <TextBox x:Name="FullName" Text="Нануев Андрей Владимирович" BorderThickness="0,0,0,1" Background="#FF6F6F72" Height="20" Foreground="White" FontSize="15" Width="405" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>
+            </StackPanel>
+            <StackPanel Margin="0,55,0,10" Orientation="Horizontal">
+                <TextBlock Text="ТЕЛЕФОН:" Foreground="White" FontSize="15" Width="75" VerticalAlignment="Center"/>
+                <TextBox x:Name="Telephone" Text="8 (900) 216-40-84" BorderThickness="0,0,0,1" Background="#FF6F6F72" Height="20" Foreground="White" FontSize="15" Width="405" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>
+            </StackPanel>
+            <Separator Background="{StaticResource ButtonOrangeBrush}" Height="3" Margin="0,85,0,0"/>
+        </Grid>
+        
+        <!--Паспорт-->
+        <Grid Grid.Row="2" Margin="10,0,10,0">
+            <StackPanel Margin="0,0,0,65" VerticalAlignment="Center" Height="25">
+                <TextBlock Text="ПАСПОРТ" FontSize="20" Foreground="White" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Margin="0,30,0,35" Orientation="Horizontal">
+                <TextBlock Text="СЕРИЯ:" Foreground="White" FontSize="15" Width="75" VerticalAlignment="Center"/>
+                <TextBox x:Name="PassportSeries" Text="4546" BorderThickness="0,0,0,1" Background="#FF6F6F72" Height="20" Foreground="White" FontSize="15" Width="115" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}" MaxLength="4"/>
+                <TextBlock Text="НОМЕР:" Foreground="White" FontSize="15" Width="60" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                <TextBox x:Name="PassportNumber" Text="464545" BorderThickness="0,0,0,1" Background="#FF6F6F72" Height="20" Foreground="White" FontSize="15" Width="220" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}" MaxLength="6"/>
+            </StackPanel>
+            <StackPanel Margin="0,55,0,10" Orientation="Horizontal">
+                <TextBlock Text="ДАТА ВЫДАЧИ:" Foreground="White" FontSize="15" Width="110" VerticalAlignment="Center"/>
+                <DatePicker x:Name="PassportDateOfIssued" Width="150" BorderThickness="0" VerticalAlignment="Center">
+                    <DatePicker.Resources>
+                        <Style TargetType="{x:Type DatePickerTextBox}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <TextBox FontSize="15" BorderThickness="0,0,0,1" Height="20" Background="#FF6F6F72" Foreground="White" IsReadOnly="True" BorderBrush="{StaticResource ButtonOrangeBrush}" Text="{Binding SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}, StringFormat=dd.MM.yyyy}"/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+                <TextBlock Text="ВЫДАН:" Foreground="White" FontSize="15" Width="60" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                <TextBox x:Name="PassportIssued" Text="В г.Новоуральске" BorderThickness="0,0,0,1" Background="#FF6F6F72" Height="20" Foreground="White" FontSize="15" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}" Width="152" Margin="0,2,0,3"/>
+            </StackPanel>
+            <Separator Background="{StaticResource ButtonOrangeBrush}" Height="3" Margin="0,85,0,0"/>
+        </Grid>
+        
+        <!--Условия аренды-->
+        <Grid Grid.Row="3" Margin="10,0,10,0">
+            <StackPanel Margin="0,0,0,65" VerticalAlignment="Center" Height="25">
+                <TextBlock Text="УСЛОВИЯ АРЕНДЫ" FontSize="20" Foreground="White" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Margin="0,30,0,35" Orientation="Horizontal">
+                <TextBlock Text="АВТОМОБИЛЬ:" Foreground="White" FontSize="15" Width="110" VerticalAlignment="Center"/>
+                <TextBox x:Name="NameCar" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" FontSize="15" Height="20" Width="370" IsReadOnly="True" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}"/>
+            </StackPanel>
+            <StackPanel Margin="0,55,0,10" Orientation="Horizontal">
+                <TextBlock Text="АРЕНДА с:" Foreground="White" FontSize="15" Width="110" VerticalAlignment="Center"/>
+                <DatePicker x:Name="CurrentDate" Margin="-2,0,0,0" Width="150" BorderThickness="0" VerticalAlignment="Center">
+                    <DatePicker.Resources>
+                        <Style TargetType="{x:Type DatePickerTextBox}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <TextBox FontSize="15" BorderThickness="0,0,0,1" Height="20" Background="#FF6F6F72" Foreground="White" IsReadOnly="True" BorderBrush="{StaticResource ButtonOrangeBrush}" Text="{Binding SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}, StringFormat=dd.MM.yyyy}" TextChanged="TextBox_TextChanged"/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+                <TextBlock Text="по:" Margin="0,0,5,0" Foreground="White" FontSize="15" VerticalAlignment="Center"/>
+                <DatePicker x:Name="LastDate" Margin="-2,0,0,0" Width="150" BorderThickness="0" VerticalAlignment="Center">
+                    <DatePicker.Resources>
+                        <Style TargetType="{x:Type DatePickerTextBox}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <TextBox FontSize="15" BorderThickness="0,0,0,1" Height="20" Background="#FF6F6F72" Foreground="White" IsReadOnly="True" BorderBrush="{StaticResource ButtonOrangeBrush}" Text="{Binding SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}, StringFormat=dd.MM.yyyy}" TextChanged="TextBox_TextChanged"/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+            </StackPanel>
+            <Separator Background="{StaticResource ButtonOrangeBrush}" Height="3" Margin="0,85,0,0"/>
+        </Grid>
+        
+        <!--Выдача автомобиля-->
+        <Grid Grid.Row="4" Margin="10,0,10,0">
+            <StackPanel Margin="0,0,0,65" VerticalAlignment="Center" Height="25">
+                <TextBlock Text="ВЫДАЧА АВТОМОБИЛЯ" FontSize="20" Foreground="White" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Margin="0,30,0,35" Orientation="Horizontal">
+                <TextBlock Text="МЕСТО:" Foreground="White" FontSize="15" Width="75" VerticalAlignment="Center"/>
+                <TextBox x:Name="PlaceOfIssue" BorderThickness="0,0,0,1" Background="#FF6F6F72" Height="20" Foreground="White" FontSize="15" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}" Width="405" Margin="0,2,0,3"/>
+            </StackPanel>
+            <StackPanel Margin="0,55,0,10" Orientation="Horizontal">
+                <TextBlock Text="ПРОБЕГ:" Foreground="White" FontSize="15" Width="75" VerticalAlignment="Center"/>
+                <TextBox x:Name="Mileage" BorderThickness="0,0,0,1" Background="#FF6F6F72" Height="20" Foreground="White" FontSize="15" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}" Width="160" MaxLength="7"/>
+                <TextBlock Text="ТОПЛИВО:" Foreground="White" FontSize="15" Width="75" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                <TextBox x:Name="Fuel" BorderThickness="0,0,0,1" Background="#FF6F6F72" Height="20" Margin="10,2,0,3" Foreground="White" FontSize="15" BorderBrush="{StaticResource ButtonOrangeBrush}" SelectionBrush="{StaticResource ButtonOrangeBrush}" Width="150" MaxLength="4"/>
+            </StackPanel>
+            <Separator Background="{StaticResource ButtonOrangeBrush}" Height="3" Margin="0,85,0,0"/>
+        </Grid>
+        
+        <!--Оформить-->
+        <Grid Grid.Row="5" Margin="10">
+            <TextBlock Name="PriceText" Text="Оплата: " FontSize="15" Foreground="{StaticResource ButtonOrangeBrush}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBlock Name="Price" Text="{Binding ElementName=sld, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="15" Foreground="{StaticResource ButtonOrangeBrush}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="57,5,0,5"/>
+            <TextBlock Name="CurrentPriceText" Foreground="Transparent"/>
+            <TextBlock Name="TextBlockCarId" Foreground="Transparent"/>
+            <Button x:Name="ButtonBuy" Content="ОФОРМИТЬ" Width="120" Style="{StaticResource OrangeButton}" HorizontalAlignment="Right" Height="Auto"/>
+        </Grid>
+    </Grid>
+</Window>

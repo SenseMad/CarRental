@@ -1,0 +1,284 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="ButtonFontFamily">Century Gothic</FontFamily>
+    <SolidColorBrush x:Key="ButtonFontBrush" Color="White" />
+
+    <SolidColorBrush x:Key="ButtonGrayBrush" Color="#5E5E5E" />
+    <SolidColorBrush x:Key="ButtonOrangeBrush" Color="#F1AD71" />
+
+    <Style x:Key="ButtonMinimize" TargetType="{x:Type Button}">
+        <Setter Property="Focusable" Value="false" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Button_Minimize"
+                        Background="Transparent">
+                        <Image 
+                            Source="pack://application:,,,/Resourses/Icon/Minimize.png"
+                            Stretch="Fill"
+                            Margin="10"
+                            />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Button_Minimize" Property="Background" Value="#3F3F41"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Button_Minimize" Property="Background" Value="#FF666666"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ButtonClose" TargetType="{x:Type Button}">
+        <Setter Property="Focusable" Value="false" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Button_Close"
+                        Background="Transparent">
+                        <Image
+                            Source="pack://application:,,,/Resourses/Icon/Close.png"
+                            Stretch="Fill"
+                            Margin="10"
+                            />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Button_Close" Property="Background" Value="#D3472E"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Button_Close" Property="Background" Value="#FF9C3421"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="OrangeButton" TargetType="{x:Type Button}">
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="Width" Value="100" />
+
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontFamily" Value="{StaticResource ButtonFontFamily}" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Foreground" Value="{StaticResource ButtonFontBrush}" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Orange_Button" Background="{StaticResource ButtonGrayBrush}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Orange_Button" Property="Background" Value="{StaticResource ButtonOrangeBrush}" />
+                            <Setter TargetName="Orange_Button" Property="Opacity" Value="0.9"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Orange_Button" Property="Background" Value="{StaticResource ButtonOrangeBrush}"/>
+                            <Setter TargetName="Orange_Button" Property="Opacity" Value="1"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RedButton" TargetType="{x:Type Button}">
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="Width" Value="100" />
+
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontFamily" Value="{StaticResource ButtonFontFamily}" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Foreground" Value="{StaticResource ButtonFontBrush}" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Orange_Button" Background="#FFC95F4C">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Orange_Button" Property="Background" Value="#FFC95F4C" />
+                            <Setter TargetName="Orange_Button" Property="Opacity" Value="0.9"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Orange_Button" Property="Background" Value="#FFC95F4C"/>
+                            <Setter TargetName="Orange_Button" Property="Opacity" Value="1"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="OrangeButtonAddImage" TargetType="{x:Type Button}">
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Orange_Button" Background="Transparent">
+                        <TextBlock Text="Добавить фото" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0" FontSize="13"/>
+                        <Image Source="pack://application:,,,/Resourses/Icon/Add.png" Height="25" Width="25"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Orange_Button" Property="Background" Value="#5E5E5E"/>
+                            <Setter TargetName="Orange_Button" Property="Opacity" Value="0.7"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Orange_Button" Property="Background" Value="#5E5E5E"/>
+                            <Setter TargetName="Orange_Button" Property="Opacity" Value="1"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="OrangeButtonEdit" TargetType="{x:Type Button}">
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Orange_Button" Background="Transparent">
+                        <Image Source="pack://application:,,,/Resourses/Icon/Edit_Image.png" Height="25" Width="25"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Orange_Button" Property="Background" Value="#5E5E5E"/>
+                            <Setter TargetName="Orange_Button" Property="Opacity" Value="0.7"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Orange_Button" Property="Background" Value="#5E5E5E"/>
+                            <Setter TargetName="Orange_Button" Property="Opacity" Value="1"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="OrangeButtonDelete" TargetType="{x:Type Button}">
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Orange_Button" Background="Transparent">
+                        <Image Source="pack://application:,,,/Resourses/Icon/Delete_Image.png" Height="25" Width="25"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Orange_Button" Property="Background" Value="#5E5E5E"/>
+                            <Setter TargetName="Orange_Button" Property="Opacity" Value="0.7"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Orange_Button" Property="Background" Value="#5E5E5E"/>
+                            <Setter TargetName="Orange_Button" Property="Opacity" Value="1"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="OrangeRadioButtonStyleImage" TargetType="{x:Type RadioButton}" >
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid x:Name="Orange_RadioButton" Background="Transparent">
+                        <Image x:Name="Orange_RadioButton_Image" Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" Width="50" Height="50" Margin="10,0,0,0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="Orange_RadioButton" Property="Opacity" Value="0.5"/>
+                            <Setter TargetName="Orange_RadioButton_Image" Property="Width" Value="40"/>
+                            <Setter TargetName="Orange_RadioButton_Image" Property="Height" Value="40"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="OrangeRadioButtonStyle" TargetType="{x:Type RadioButton}" >
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid>
+                        <TextBlock x:Name="CheckBoxText" Margin="2" Foreground="#FFB8B8B8">
+                            <ContentPresenter/>
+                        </TextBlock>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="CheckBoxText" Property="Foreground" Value="#F1AD71"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DatePickerTextBox" TargetType="{x:Type DatePickerTextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
+                    <TextBox x:Name="TextBox" BorderThickness="0,0,0,1" Background="#FF6F6F72" Foreground="White" BorderBrush="{StaticResource ButtonOrangeBrush}" Text="{Binding Path=SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}, StringFormat='dd.MM.yyyy'}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DatePicker" TargetType="{x:Type DatePicker}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DatePicker}">
+                    <Grid>
+                        <DatePickerTextBox Style="{DynamicResource DatePickerTextBox}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="OrangeComboBox" TargetType="{x:Type ComboBox}">
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <Border Background="Aqua" BorderThickness="3"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#5E5E5E"/>
+                            <Setter Property="Opacity" Value="0.7"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

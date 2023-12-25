@@ -1,0 +1,15 @@
+﻿<Application x:Class="CarRental.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CarRental"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/Button/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="Styles/Windows/WindowStyles.xaml"/>
+                <ResourceDictionary Source="Styles/TabControl/WhiteTabControlStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

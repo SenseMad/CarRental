@@ -1,0 +1,30 @@
+﻿<Window 
+        xmlns:cars="clr-namespace:CarRental.Windows.Cars" 
+        xmlns:contracts="clr-namespace:CarRental.Windows.Contracts" 
+    
+        x:Class="CarRental.MainWindow"     
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Name="Window"
+        Title="Автопрокат" Icon="pack://application:,,,/Resourses/Logotype/Car.png" Height="675" Width="1000" WindowStartupLocation="CenterScreen" Style="{StaticResource WindowStyle}"
+    MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Window.Effect>
+        <BlurEffect Radius="0"/>
+    </Window.Effect>
+    <Grid>
+        <TabControl Style="{StaticResource WhiteTabControlStyle}" Grid.ColumnSpan="2">
+            <TabItem Header="МАШИНЫ" Style="{StaticResource WhiteTabItemStyle}">
+                <cars:SearchCarsPanel/>
+            </TabItem>
+            <TabItem Header="ЗАКАЗАННЫЕ МАШИНЫ" Style="{StaticResource WhiteTabItemStyle}">
+                <contracts:SearchContractsPanel/>
+            </TabItem>
+            <TabItem Header="ДОБАВЛЕНИЕ МАШИНЫ" Style="{StaticResource WhiteTabItemStyle}">
+                <cars:AddCarPanel/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
